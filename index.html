@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marci Metzger Homes - Real Estate Agent, Real Estate, Realtor</title>
+    <meta name="description"
+        content="Marci Metzger Homes - Pahrump, NV - Over two decades in real estate. Licensed Broker in Seattle, now serving Southern Nevada as Pahrump's top real estate agent.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@400;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Floating Gold Particles Background -->
+    <canvas id="goldParticles"></canvas>
+
+    <button class="mobile-menu-btn" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar Profile -->
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Close menu">&times;</button>
+            <button class="sidebar-toggle" aria-label="Toggle Sidebar">&lt;</button>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#home">
+                            <span class="nav-icon">
+                                <!-- House -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
+                                    <path d="M9 21V12h6v9" />
+                                </svg>
+                            </span>
+                            <span class="nav-text">HOME</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" style="cursor: default;">
+                            <span class="nav-icon">
+                                <!-- Building / Listings -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="18" rx="1" />
+                                    <rect x="14" y="8" width="7" height="13" rx="1" />
+                                    <path d="M6 7h1M6 11h1M6 15h1M17 12h1M17 16h1" />
+                                </svg>
+                            </span>
+                            <span class="nav-text">LISTINGS</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" style="cursor: default;">
+                            <span class="nav-icon">
+                                <!-- Key / Move -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="8" cy="15" r="4" />
+                                    <path d="M12 11l8-8" />
+                                    <path d="M17 3l4 4" />
+                                    <path d="M19 5l-2 2" />
+                                </svg>
+                            </span>
+                            <span class="nav-text">LET'S MOVE</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" style="cursor: default;">
+                            <span class="nav-icon">
+                                <!-- Person / About -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="4" />
+                                    <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                                </svg>
+                            </span>
+                            <span class="nav-text">ABOUT US</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="social-links" style="margin-bottom: 1.5rem; justify-content: center;">
+
+                    <button class="theme-toggle" aria-label="Toggle Dark Mode"></button>
+                </div>
+                <div class="footer-text">
+                    <p>Copyright &copy; 2026 Marci METZGER - All Rights Reserved</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header" id="home">
+                <div class="header-text">
+                    <img src="images/header.jpg" alt="Marci Metzger Homes" class="header-logo-img">
+                    <p class="subtitle">MARCI METZGER - THE RIDGE REALTY GROUP</p>
+                    <p class="subtitle">Pahrump Realtor</p>
+
+                </div>
+                <div class="header-action">
+                    <a href="tel:(206)919-6886" class="btn btn-primary">Get in touch ↗</a>
+                </div>
+            </header>
+
+            <div class="areas-strip">
+                <span class="strip-label">AREAS SERVED</span>
+                <div class="strip-items">
+                    <a href="#projects" class="strip-item"><span class="icon-location"></span> Find Your Dream Home</a>
+                    <a href="#gallery" class="strip-item"><span class="icon-location"></span> Photo Gallerys</a>
+                    <a href="#services" class="strip-item"><span class="icon-location"></span> Our Services</a>
+                    <a href="#contact" class="strip-item"><span class="icon-location"></span> Call or Visit</a>
+                </div>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Card 1: About Me -->
+                <div class="bento-card card-full" id="about">
+                    <div class="about-profile-flex">
+                        <img src="images/marci.jpg" alt="Marci Metzger" class="profile-portrait">
+                        <div class="profile-info">
+                            <h3 class="profile-name-title">Marci Metzger</h3>
+                            <h4 class="profile-role">Realtor for nearly 3 decades</h4>
+
+                            <p>206-919-6886</p>
+                        </div>
+                    </div>
+
+                    <!-- Section Title from Screenshot -->
+                    <h2
+                        style="text-align: center; font-size: 2.5rem; font-family: 'Cinzel', serif; margin-top: 4rem; margin-bottom: 3rem; color: var(--accent-orange); font-weight: 400;">
+                        GET IT SOLD</h2>
+
+                    <!-- Feature Row 1 (Image Left, Text Right) -->
+                    <div class="about-flex">
+                        <img src="images/house1.jpg" alt="Beautiful Kitchen" class="about-img feature-img">
+                        <div class="about-text" style="text-align: center; padding: 0 2rem;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Top Residential Sales Last 5 Years</h3>
+                            <p style="color: var(--text-light); line-height: 1.8;">
+                                We helped nearly 90 clients in 2021, and closed 28.5 million in sales! Our team works
+                                hard everyday to grow and learn, so that we may continue to excel in our market. Our
+                                clients deserve our best, & we want to make sure our best is better every year.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature Row 2 (Text Left, Image Right) -->
+                    <div class="about-flex reverse">
+                        <img src="images/house2.jpg" alt="House Exterior" class="about-img feature-img">
+                        <div class="about-text" style="text-align: center; padding: 0 2rem;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Don't Just List it...</h3>
+                            <p style="color: var(--text-light); line-height: 1.8;">
+                                Get it SOLD! We exhaust every avenue to ensure our listings are at the fingertips of
+                                every possible buyer, getting you top dollar for your home.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature Row 3 (Image Left, Text Right) -->
+                    <div class="about-flex">
+                        <img src="images/house3.jpg" alt="House Keys" class="about-img feature-img">
+                        <div class="about-text" style="text-align: center; padding: 0 2rem;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Guide to Buyers</h3>
+                            <p style="color: var(--text-light); line-height: 1.8;">
+                                Nobody knows the market like we do. Enjoy having a pro at your service. Market analysis,
+                                upgrades lists, contractors on speed dial, & more!
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Card 2: Find Your Dream Home Search (Spans 3 columns) -->
+                <div class="bento-card card-full" id="projects" style="background: white; border-radius: 0;">
+                    <h2 class="search-title">FIND YOUR DREAM HOME</h2>
+                    <form class="real-estate-search" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label>Location</label>
+                            <select>
+                                <option>Any</option>
+                                <option>Alamo</option>
+                                <option>Alton</option>
+                                <option>Amargosa Valley</option>
+                                <option>Beatty</option>
+                                <option>Beryl</option>
+                                <option>Blue Diamond</option>
+                                <option>Boulder City</option>
+                                <option>Brian Head</option>
+                                <option>Cal Nev Ari</option>
+                                <option>Caliente</option>
+                                <option>Cold Creek</option>
+                                <option>Crystal</option>
+                                <option>Duck Creek Village</option>
+                                <option>Dyer</option>
+                                <option>Elko</option>
+                                <option>Ely</option>
+                                <option>Goldfield</option>
+                                <option>Goodsprings</option>
+                                <option>Hatch</option>
+                                <option>Henderson</option>
+                                <option>Indian Springs</option>
+                                <option>Jean</option>
+                                <option>Las Vegas</option>
+                                <option>Laughlin</option>
+                                <option>Logandale</option>
+                                <option>Manhattan</option>
+                                <option>Mc Gill</option>
+                                <option>Mesquite</option>
+                                <option>Moapa</option>
+                                <option>Mount Charleston</option>
+                                <option>Mountain Springs</option>
+                                <option>North Las Vegas</option>
+                                <option>Other</option>
+                                <option>Overton</option>
+                                <option>Pahrump</option>
+                                <option>Palm Gardens</option>
+                                <option>Panaca</option>
+                                <option>Parowan</option>
+                                <option>Pioche</option>
+                                <option>Round Mountain</option>
+                                <option>Sandy Valley</option>
+                                <option>Searchlight</option>
+                                <option>Tonopah</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <select>
+                                <option>Any</option>
+                                <option>Land</option>
+                                <option>Residential Lease</option>
+                                <option>High Rise</option>
+                                <option>Residential</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Sort By</label>
+                            <select>
+                                <option></option>
+                                <option>Newest</option>
+                                <option>Oldest</option>
+                                <option>Least Expensive to Most</option>
+                                <option>Most Expensive to Least</option>
+                                <option>Bedrooms (Low to High)</option>
+                                <option>Bedrooms (High to Low)</option>
+                                <option>Bathrooms (Low to High)</option>
+                                <option>Bathrooms (High to Low)</option>
+                            </select>
+                        </div>
+
+                        <div class="search-field-group">
+                            <div class="form-group">
+                                <label>Bedrooms</label>
+                                <select>
+                                    <option>Any Number</option>
+                                    <option>1+</option>
+                                    <option>2+</option>
+                                    <option>3+</option>
+                                    <option>4+</option>
+                                    <option>5+</option>
+                                    <option>6+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Baths</label>
+                                <select>
+                                    <option>Any Number</option>
+                                    <option>1+</option>
+                                    <option>2+</option>
+                                    <option>3+</option>
+                                    <option>4+</option>
+                                    <option>5+</option>
+                                    <option>6+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-field-group">
+                            <div class="form-group">
+                                <label>Min Price</label>
+                                <input type="text" placeholder="No Min">
+                            </div>
+                            <div class="form-group">
+                                <label>Max Price</label>
+                                <input type="text" placeholder="No Max">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="align-items: flex-end;">
+                            <button type="submit" class="search-btn">SEARCH NOW</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Partner Logos -->
+                <div class="partner-logos-container card-full">
+                    <img src="images/icon1.jpg" alt="Partner 1" class="partner-logo">
+                    <img src="images/icon2.jpg" alt="Partner 2" class="partner-logo">
+                    <img src="images/icon3.jpg" alt="Partner 3" class="partner-logo">
+                    <img src="images/icon4.jpg" alt="Partner 4" class="partner-logo">
+                </div>
+
+                <!-- Card 6: Photo Gallery -->
+                <div class="bento-card card-full" id="gallery" style="padding: 1.5rem 0 2rem;">
+                    <div style="text-align: center; margin-bottom: 1rem; padding: 0 2rem;">
+                        <span
+                            style="font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-orange);">—
+                            OUR LISTINGS —</span>
+                        <h2
+                            style="font-family: 'Cinzel', serif; font-size: 1.9rem; font-weight: 400; color: var(--text-main); margin-top: 0.4rem; letter-spacing: 2px;">
+                            PHOTO GALLERY</h2>
+                        <div
+                            style="width: 50px; height: 2px; background: linear-gradient(90deg, var(--accent-blue), var(--accent-orange)); margin: 0.6rem auto 0;">
+                        </div>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="carousel-nav prev" aria-label="Previous image">&#10094;</button>
+                        <div class="carousel-track">
+                            <div class="carousel-slide"><img src="images/photo1.jpg" alt="Gallery Photo 1"></div>
+                            <div class="carousel-slide"><img src="images/photo2.jpg" alt="Gallery Photo 2"></div>
+                            <div class="carousel-slide"><img src="images/photo3.jpg" alt="Gallery Photo 3"></div>
+                            <div class="carousel-slide"><img src="images/photo4.jpg" alt="Gallery Photo 4"></div>
+                            <div class="carousel-slide"><img src="images/photo5.jpg" alt="Gallery Photo 5"></div>
+                            <div class="carousel-slide"><img src="images/photo6.jpg" alt="Gallery Photo 6"></div>
+                            <div class="carousel-slide"><img src="images/photo7.jpg" alt="Gallery Photo 7"></div>
+                        </div>
+                        <button class="carousel-nav next" aria-label="Next image">&#10095;</button>
+
+                        <div class="carousel-indicators"></div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Services List -->
+                <div class="bento-card card-full" id="services">
+                    <div class="card-header" style="justify-content: center; margin-bottom: 2.5rem; margin-top: 1rem;">
+                        <h3
+                            style="font-size: 1.5rem; font-family: 'Cinzel', serif; color: var(--accent-orange); letter-spacing: 2px;">
+                            OUR SERVICES</h3>
+                    </div>
+
+                    <div class="services-cards-container"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div class="bento-card industry-card">
+                            <div class="industry-img-wrapper">
+                                <img src="images/image1.jpg" alt="Industry Image 1">
+                            </div>
+                            <div class="industry-content">
+                                <h4>Real Estate Done Right</h4>
+                                <p>Nervous about your property adventure? Don’t be. Whether you're getting ready to buy
+                                    or sell
+                                    your residence, looking at investment properties, or just curious about the markets,
+                                    our
+                                    team ensures you get the best experience possible!</p>
+                            </div>
+                        </div>
+
+                        <div class="bento-card industry-card">
+                            <div class="industry-img-wrapper">
+                                <img src="images/image2.jpg" alt="Industry Image 2">
+                            </div>
+                            <div class="industry-content">
+                                <h4>Commercial & Residential</h4>
+                                <p>Large or small, condo or mansion, we can find it and get at the price that's right.
+                                    Fixer-uppers? Luxury? We can help with all of it! We live, work, and play in this
+                                    community.
+                                    Happy to help you find where to put you hard-earned dollars.</p>
+                            </div>
+                        </div>
+
+                        <div class="bento-card industry-card">
+                            <div class="industry-img-wrapper">
+                                <img src="images/image3.jpg" alt="Industry Image 3">
+                            </div>
+                            <div class="industry-content">
+                                <h4>Rely on Expertise</h4>
+                                <p>If you have questions about affordability, credit, and loan options, trust us to
+                                    connect you
+                                    with the right people to get the answers you need in a timely fashion. We make sure
+                                    you feel
+                                    confident and educated every step of the way.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Contact Section -->
+                <div class="bento-card card-full" id="contact" style="padding: 3rem 4rem;">
+                    <div class="card-header" style="justify-content: center; margin-bottom: 3rem; margin-top: 1rem;">
+                        <h3
+                            style="font-size: 2rem; font-family: 'Cinzel', serif; color: #a88c83; letter-spacing: 3px; font-weight: normal; text-transform: uppercase;">
+                            CALL OR VISIT</h3>
+                    </div>
+
+                    <div class="contact-container"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 5rem;">
+
+                        <!-- Left Column: Form -->
+                        <div class="contact-form">
+                            <h4
+                                style="font-size: 1.3rem; font-weight: 500; margin-bottom: 2rem; color: var(--text-main);">
+                                Send
+                                Message</h4>
+                            <form action="#" method="POST">
+                                <div class="form-group" style="margin-bottom: 1.5rem;">
+                                    <input type="text" placeholder="Name"
+                                        style="width: 100%; border: none; border-bottom: 1px solid var(--border-color); padding: 0.8rem 0; font-size: 0.95rem; color: var(--text-main); outline: none; background: transparent; transition: border-color 0.3s;"
+                                        onfocus="this.style.borderColor='#a88c83'" onblur="this.style.borderColor=''">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 1.5rem;">
+                                    <input type="email" placeholder="Email*" required
+                                        style="width: 100%; border: none; border-bottom: 1px solid var(--border-color); padding: 0.8rem 0; font-size: 0.95rem; color: var(--text-main); outline: none; background: transparent; transition: border-color 0.3s;"
+                                        onfocus="this.style.borderColor='#a88c83'" onblur="this.style.borderColor=''">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 2rem;">
+                                    <textarea placeholder="Message" rows="3"
+                                        style="width: 100%; border: none; border-bottom: 1px solid var(--border-color); padding: 0.8rem 0; font-size: 0.95rem; color: var(--text-main); outline: none; background: transparent; resize: vertical; transition: border-color 0.3s;"
+                                        onfocus="this.style.borderColor='#a88c83'"
+                                        onblur="this.style.borderColor=''"></textarea>
+                                </div>
+                                <div style="text-align: center; margin-bottom: 2rem;">
+                                    <button type="submit"
+                                        style="background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-mid) 100%); border: none; border-radius: 20px; padding: 0.8rem 3rem; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; color: #fff; cursor: pointer; transition: opacity 0.3s; box-shadow: 0 4px 16px rgba(26,68,128,0.25);"
+                                        onmouseover="this.style.opacity='0.85'"
+                                        onmouseout="this.style.opacity='1'">SEND</button>
+                                </div>
+                                <p style="font-size: 0.75rem; color: #888; text-align: center; margin: 0;">This site is
+                                    protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+                            </form>
+                        </div>
+
+                        <!-- Right Column: Info -->
+                        <div class="contact-info" style="color: var(--text-main);">
+                            <h4 style="font-size: 1.2rem; font-weight: 500; margin-bottom: 1.5rem;">Marci Metzger - THE
+                                RIDGE REALTY GROUP</h4>
+                            <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">3190 HW-160, Suite F, Pahrump, Nevada
+                                89048, United States</p>
+                            <p style="font-size: 0.95rem; margin-bottom: 3rem; color: var(--text-light);">(206) 919-6886
+                            </p>
+
+                            <h4 style="font-size: 1.3rem; font-weight: 500; margin-bottom: 1.5rem;">Office Hours</h4>
+                            <div onclick="const list = document.getElementById('hours-list'); const icon = document.getElementById('hours-chevron'); if(list.style.display === 'none'){ list.style.display = 'block'; icon.innerHTML = '&#9650;'; } else { list.style.display = 'none'; icon.innerHTML = '&#9660;'; }"
+                                style="cursor: pointer; margin-bottom: 1.5rem; user-select: none;">
+                                <p style="font-size: 0.95rem; margin: 0;"><span style="color: var(--text-main);">Open
+                                        today</span>
+                                    <span style="color: var(--text-light); margin-left: 0.5rem;">08:00 am – 07:00 pm
+                                    </span> <span id="hours-chevron"
+                                        style="font-size: 0.7rem; color: var(--text-light); margin-left: 0.3rem; transition: transform 0.2s;">&#9660;</span>
+                                </p>
+                                <div id="hours-list"
+                                    style="display: none; margin-top: 1rem; font-size: 0.95rem; color: var(--text-main); line-height: 1.8;">
+                                    <div style="display: flex; gap: 1rem;"><span style="width: 35px;">Mon</span>
+                                        <span>08:00 am – 07:00 pm</span>
+                                    </div>
+                                    <div style="display: flex; gap: 1rem; font-weight: bold; color: var(--text-main);">
+                                        <span style="width: 35px;">Tue</span> <span>08:00 am – 07:00 pm</span>
+                                    </div>
+                                    <div style="display: flex; gap: 1rem;"><span style="width: 35px;">Wed</span>
+                                        <span>08:00 am – 07:00 pm</span>
+                                    </div>
+                                    <div style="display: flex; gap: 1rem;"><span style="width: 35px;">Thu</span>
+                                        <span>08:00 am – 07:00 pm</span>
+                                    </div>
+                                    <div style="display: flex; gap: 1rem;"><span style="width: 35px;">Fri</span>
+                                        <span>08:00 am – 07:00 pm</span>
+                                    </div>
+                                    <div style="display: flex; gap: 1rem;"><span style="width: 35px;">Sat</span>
+                                        <span>08:00 am – 07:00 pm</span>
+                                    </div>
+                                    <div style="display: flex; gap: 1rem;"><span style="width: 35px;">Sun</span>
+                                        <span>Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 2.5rem; margin-bottom: 2.5rem; font-size: 0.95rem;">
+                                <span>Open daily</span>
+                                <span>8:00 am - 7:00 pm</span>
+                            </div>
+                            <p style="font-size: 0.95rem;">Appointments outside office hours available upon request.
+                                Just call!</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 6: Map Section -->
+                <div class="bento-card card-full" style="padding: 0; background: transparent; overflow: hidden;">
+                    <!-- Full Width Map -->
+                    <div style="width: 100%; height: 400px; background-color: #ddd;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3221.728770289725!2d-116.00287412437873!3d36.14881850422115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c655383ba5ddad%3A0xc6de6b22b8ea5f00!2s3190%20NV-160%20%23F%2C%20Pahrump%2C%20NV%2089048!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="site-footer">
+                <!-- Social Icons -->
+                <div class="footer-socials" style="display: flex; gap: 2.5rem; margin-bottom: 2rem;">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/MarciHomes/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook" style="color: #aaa; transition: color 0.3s;"
+                        onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/marcimetzger_theridge/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram" style="color: #aaa; transition: color 0.3s;"
+                        onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/marci-metzger-30642496/" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn" style="color: #aaa; transition: color 0.3s;"
+                        onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <!-- Yelp -->
+                    <a href="https://www.yelp.com/biz/xr3yQN_m2SgO0R_7S6p62w" target="_blank" rel="noopener noreferrer"
+                        aria-label="Yelp" style="color: #aaa; transition: color 0.3s;"
+                        onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.443 14.502c-1.393-.207-1.503-1.157-1.171-2.006 1.545-3.955 3.197-7.854 4.887-11.741.442-1.02.502-1.258-1.517-1.042C9.07 1.096 8.358 4.417 8.01 6.541c-.247 1.492-.125 1.565-1.543 1.171-1.31-.365-5.59-1.849-5.918-1.89-2.019-.247-2.115-.411-1.554 1.196 1.621 4.636 4.492 8.337 8.528 10.98.636.417 1.401.761 1.706-.505.418-1.748.868-3.488 1.341-5.214.072-.256-.039-.548-.127-.777zm4.331 3.52c.224-2.179-.475-4.223-1.37-6.223-.195-.436-.457-.791-.98-.679-.687.147-1.353.385-2.016.637-2.316.883-2.302.839-1.393 2.87 1.252 2.805 2.658 4.12 8.243.687 1.272.84 1.25 1.317-.417.432-1.506.635-3.053.322-4.431zM9.544 14.939c-.588-1.385-.568-1.388-1.921-.77-2.525 1.157-5.006 2.4-7.462 3.686-1.52.796-1.546.73 0 1.693 2.144 1.332 4.484 2.128 6.96 2.41 1.189.135 1.294.067 1.428-1.127.185-1.637.362-3.275.545-4.912.062-.55-.078-1.1-.383-1.62-.119-.202-.158-.231.11-.326l.723-.034zM16.591 16.591c-.559-.699-.86-1.428-1.076-2.327-.087-.361-.271-.628-.687-.493-2.106.685-2.073.666-1.171 2.585 1.378 2.936 2.873 5.814 4.406 8.667.644 1.194.887 1.206 1.716-.145 1.36-2.22 1.722-4.664 1.424-7.228-.15-1.285-.297-1.375-1.426-.986-1.13.389-2.247.818-3.387 1.184-1.238.398-1.393.385-1.405-1.05z" />
+                        </svg>
+                    </a>
+                </div>
+                <!-- Copyright text -->
+                <p style="color: #777; font-size: 0.85rem; margin: 0; letter-spacing: 0.5px;">Copyright &copy; 2026
+                    Marci METZGER - All Rights Reserved</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+
+    <!-- Floating Gold Particles Animation -->
+    <script>
+        (function () {
+            const canvas = document.getElementById('goldParticles');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let w, h, particles = [];
+            const PARTICLE_COUNT = 65;
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (prefersReducedMotion) {
+                canvas.style.display = 'none';
+                return;
+            }
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            // Richer gold + warm metallic palette
+            const colors = [
+                'rgba(184, 150, 90, ',    // antique gold
+                'rgba(201, 175, 120, ',   // light gold
+                'rgba(160, 130, 70, ',    // deep gold
+                'rgba(220, 200, 155, ',   // champagne
+                'rgba(255, 215, 130, ',   // bright gold shimmer
+                'rgba(196, 160, 100, ',   // warm amber gold
+                'rgba(210, 180, 130, ',   // rose gold
+                'rgba(235, 215, 175, ',   // platinum cream
+            ];
+
+            function createParticle() {
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const type = Math.random(); // 0-0.5 tiny, 0.5-0.8 medium, 0.8-1 large shimmer
+                let size, speedY, opacity, glowFactor;
+
+                if (type < 0.5) {
+                    size = Math.random() * 1.2 + 0.4;   // tiny
+                    speedY = Math.random() * 0.35 + 0.12;
+                    opacity = Math.random() * 0.35 + 0.08;
+                    glowFactor = 2.5;
+                } else if (type < 0.8) {
+                    size = Math.random() * 1.8 + 1.0;   // medium
+                    speedY = Math.random() * 0.3 + 0.1;
+                    opacity = Math.random() * 0.45 + 0.12;
+                    glowFactor = 4;
+                } else {
+                    size = Math.random() * 2.0 + 1.8;   // large shimmer
+                    speedY = Math.random() * 0.22 + 0.07;
+                    opacity = Math.random() * 0.30 + 0.08;
+                    glowFactor = 6;
+                }
+
+                return {
+                    x: Math.random() * w,
+                    y: Math.random() * h + h,
+                    size,
+                    speedY,
+                    speedX: (Math.random() - 0.5) * 0.4,
+                    drift: (Math.random() - 0.5) * 0.006, // gentle horizontal wander
+                    opacity,
+                    color,
+                    pulse: Math.random() * Math.PI * 2,
+                    pulseSpeed: Math.random() * 0.018 + 0.004,
+                    shimmer: type >= 0.65,
+                    glowFactor,
+                };
+            }
+
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                const p = createParticle();
+                p.y = Math.random() * h; // spread on load
+                particles.push(p);
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, w, h);
+
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+
+                    // Move with gentle wander
+                    p.y -= p.speedY;
+                    p.speedX += p.drift;
+                    p.speedX = Math.max(-0.6, Math.min(0.6, p.speedX)); // clamp drift
+                    p.x += p.speedX;
+                    p.pulse += p.pulseSpeed;
+
+                    // Pulsing opacity
+                    const pulseOpacity = p.opacity + Math.sin(p.pulse) * 0.18;
+                    const finalOpacity = Math.max(0, Math.min(1, pulseOpacity));
+
+                    // Outer glow halo
+                    if (p.shimmer) {
+                        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * p.glowFactor);
+                        grad.addColorStop(0, p.color + (finalOpacity * 0.35) + ')');
+                        grad.addColorStop(0.4, p.color + (finalOpacity * 0.12) + ')');
+                        grad.addColorStop(1, p.color + '0)');
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.size * p.glowFactor, 0, Math.PI * 2);
+                        ctx.fillStyle = grad;
+                        ctx.fill();
+                    }
+
+                    // Core particle dot
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color + finalOpacity + ')';
+                    ctx.fill();
+
+                    // Reset when off-screen
+                    if (p.y < -30 || p.x < -30 || p.x > w + 30) {
+                        particles[i] = createParticle();
+                    }
+                }
+
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+        })();
+    </script>
+</body>
+
+</html>
