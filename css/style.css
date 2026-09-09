@@ -1513,39 +1513,26 @@ ul {
     top: 1rem;
     left: 1rem;
     z-index: 4000;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 10px 12px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-blue);
+    background: var(--accent-blue);   /* solid colour so it's always visible */
+    border: none;
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(12, 30, 54, 0.35);
     cursor: pointer;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
     width: 44px;
     height: 44px;
+    color: #ffffff;
+    transition: opacity 0.2s ease, background 0.2s ease;
 }
 
-.mobile-menu-btn span {
+.mobile-menu-btn:hover {
+    background: var(--accent-blue-mid);
+}
+
+.mobile-menu-btn svg {
     display: block;
-    width: 25px;
-    height: 2px;
-    background-color: var(--text-main);
-    margin: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    border-radius: 2px;
-}
-
-/* Animated burger → X */
-.mobile-menu-btn.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-.mobile-menu-btn.open span:nth-child(2) {
-    opacity: 0;
-}
-.mobile-menu-btn.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Overlay when sidebar is open on mobile */
