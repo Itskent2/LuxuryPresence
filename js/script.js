@@ -16,6 +16,7 @@ document.body.appendChild(overlay);
 
 function openSidebar() {
     if (!sidebar) return;
+    sidebar.classList.remove('collapsed');
     sidebar.classList.add('active');
     overlay.classList.add('active');
     if (mobileBtn) mobileBtn.classList.add('open');
@@ -57,8 +58,11 @@ if (sidebarToggleBtn && sidebar) {
         if (window.innerWidth <= 767 || sidebar.classList.contains('active')) {
             // On mobile: arrow button closes the sidebar drawer
             closeSidebar();
+        } else if (window.innerWidth <= 1024) {
+            // On tablet/iPad: toggle expanded mode
+            sidebar.classList.toggle('expanded');
         } else {
-            // On tablet and desktop: arrow button collapses/expands the sidebar
+            // On desktop: arrow button collapses/expands the sidebar
             sidebar.classList.toggle('collapsed');
         }
     });

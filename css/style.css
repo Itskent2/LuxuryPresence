@@ -1634,32 +1634,73 @@ body.sidebar-open .mobile-menu-btn {
 
 /* ========================================
    Tablet & iPad Layout (768px – 1024px)
-   Sidebar EXISTS persistently on tablet/iPad
+   Sidebar shows as the icon strip (no burger menu)
    ======================================== */
 @media (min-width: 768px) and (max-width: 1024px) {
     .dashboard-wrapper {
         flex-direction: row;
     }
 
+    /* On tablet/iPad: sidebar is the collapsed icon strip by default */
     .sidebar {
         position: sticky;
         top: 1rem;
         height: calc(100vh - 2rem);
-        width: 220px;
-        min-width: 220px;
-        padding: 2rem 1.1rem;
+        width: 80px;
+        min-width: 80px;
+        padding: 2rem 0.6rem;
         margin: 1rem 0 1rem 0.8rem;
         display: flex;
         left: auto;
         z-index: 200;
         box-shadow: var(--shadow-blue);
         border-radius: var(--radius-lg);
+        transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
     }
 
-    .sidebar.collapsed {
-        width: 80px;
-        min-width: 80px;
-        padding: 2rem 0.6rem;
+    .sidebar .nav-text,
+    .sidebar .footer-text {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .sidebar .sidebar-nav a {
+        padding: 1rem 0;
+        justify-content: center;
+    }
+
+    .sidebar .nav-icon {
+        margin-right: 0;
+    }
+
+    .sidebar .sidebar-toggle {
+        transform: rotate(180deg); /* Arrow points > to expand */
+    }
+
+    /* When expanded on tablet/iPad */
+    .sidebar.expanded {
+        width: 220px;
+        min-width: 220px;
+        padding: 2rem 1.1rem;
+    }
+
+    .sidebar.expanded .nav-text,
+    .sidebar.expanded .footer-text {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .sidebar.expanded .sidebar-nav a {
+        padding: 1rem 1.5rem;
+        justify-content: flex-start;
+    }
+
+    .sidebar.expanded .nav-icon {
+        margin-right: 1rem;
+    }
+
+    .sidebar.expanded .sidebar-toggle {
+        transform: none; /* Arrow points < to collapse */
     }
 
     .mobile-menu-btn {
@@ -1736,11 +1777,12 @@ body.sidebar-open .mobile-menu-btn {
         flex-direction: column;
     }
 
-    .sidebar {
+    .sidebar,
+    .sidebar.collapsed {
         position: fixed;
         left: -100%;
-        width: 80vw;
-        max-width: 300px;
+        width: 80vw !important;
+        max-width: 300px !important;
         z-index: 3000;
         transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
@@ -1749,14 +1791,36 @@ body.sidebar-open .mobile-menu-btn {
         margin: 0;
         border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
         overflow-y: auto;
-        padding-top: 4rem;
+        padding: 4rem 1.5rem 2.5rem !important;
     }
 
-    .sidebar.active {
+    .sidebar.active,
+    .sidebar.collapsed.active {
         left: 0;
     }
 
-    /* Hide the × close button — arrow handles closing on mobile */
+    /* On mobile drawer: ALWAYS SHOW THE BUTTONS WITH TEXT (HOME, LISTINGS, LET'S MOVE, ABOUT US) */
+    .sidebar .nav-text,
+    .sidebar.collapsed .nav-text,
+    .sidebar .footer-text,
+    .sidebar.collapsed .footer-text {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: inline-block !important;
+    }
+
+    .sidebar .sidebar-nav a,
+    .sidebar.collapsed .sidebar-nav a {
+        padding: 1rem 1.5rem !important;
+        justify-content: flex-start !important;
+    }
+
+    .sidebar .nav-icon,
+    .sidebar.collapsed .nav-icon {
+        margin-right: 1rem !important;
+    }
+
+    /* Hide the × close button — arrow < handles closing on mobile */
     .sidebar-close {
         display: none;
     }
