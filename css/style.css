@@ -1513,26 +1513,55 @@ ul {
     top: 1rem;
     left: 1rem;
     z-index: 4000;
-    background: var(--accent-blue);   /* solid colour so it's always visible */
-    border: none;
+    background: var(--accent-blue);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 0;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(12, 30, 54, 0.35);
     cursor: pointer;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
     width: 44px;
     height: 44px;
     color: #ffffff;
-    transition: opacity 0.2s ease, background 0.2s ease;
+    transition: opacity 0.25s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+body.dark-theme .mobile-menu-btn {
+    background: var(--accent-blue-mid);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .mobile-menu-btn:hover {
     background: var(--accent-blue-mid);
+    transform: scale(1.04);
 }
 
-.mobile-menu-btn svg {
+.mobile-menu-btn span {
     display: block;
+    width: 22px;
+    height: 2.5px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+    transform-origin: center;
+}
+
+/* Animated burger → X */
+.mobile-menu-btn.open span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.mobile-menu-btn.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobile-menu-btn.open span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
 }
 
 /* Overlay when sidebar is open on mobile */
@@ -1695,23 +1724,44 @@ body.sidebar-open .mobile-menu-btn {
         box-shadow: 0 4px 12px rgba(232, 101, 58, 0.3);
     }
 
-    /* Arrow toggle sits inside the sidebar top-right as a close button */
+    /* Arrow toggle sits inside the sidebar top-right as a close button (<) */
     .sidebar-toggle {
         display: flex;
         position: absolute;
         top: 1.2rem;
         right: 1.2rem;
         left: auto;      /* override desktop left:-15px positioning */
-        width: 34px;
-        height: 34px;
-        background: var(--bg-page);
+        width: 36px;
+        height: 36px;
+        background-color: var(--accent-blue);
+        color: #ffffff;
         border-radius: 50%;
-        transform: rotate(180deg); /* point → right = close */
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transform: none; /* Keep < arrow pointing left to close */
+        box-shadow: 0 2px 10px rgba(12, 30, 54, 0.25);
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        transition: background 0.2s ease, transform 0.2s ease;
+        z-index: 3005;
+    }
+
+    body.dark-theme .sidebar-toggle {
+        background-color: var(--accent-blue-mid);
+        color: #ffffff;
+    }
+
+    .sidebar-toggle:hover,
+    .sidebar-toggle:active {
+        background-color: var(--accent-blue-mid);
+        transform: scale(1.06);
     }
 
     .sidebar.active .sidebar-toggle {
-        transform: rotate(180deg);
+        transform: none; /* Stay as < pointing left to close */
     }
 }
 
