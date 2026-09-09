@@ -1,3 +1,9 @@
+// Force page to restart at the top on reload
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 // Mobile Sidebar Toggle
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const sidebarClose = document.querySelector('.sidebar-close');
