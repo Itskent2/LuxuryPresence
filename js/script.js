@@ -13,7 +13,8 @@ function openSidebar() {
     sidebar.classList.add('active');
     overlay.classList.add('active');
     if (mobileBtn) mobileBtn.classList.add('open');
-    document.body.style.overflow = 'hidden'; // prevent background scroll
+    document.body.classList.add('sidebar-open');   // hides burger via CSS
+    document.body.style.overflow = 'hidden';
 }
 
 function closeSidebar() {
@@ -21,6 +22,7 @@ function closeSidebar() {
     sidebar.classList.remove('active');
     overlay.classList.remove('active');
     if (mobileBtn) mobileBtn.classList.remove('open');
+    document.body.classList.remove('sidebar-open'); // shows burger again
     document.body.style.overflow = '';
 }
 

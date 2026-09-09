@@ -1566,6 +1566,13 @@ ul {
     pointer-events: auto;
 }
 
+/* Hide the burger button while the sidebar drawer is open */
+body.sidebar-open .mobile-menu-btn {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
 /* ========================================
    Footer
    ======================================== */
@@ -1633,6 +1640,11 @@ ul {
         display: none;
     }
 
+    /* Add top padding so nav items clear the arrow button */
+    .sidebar {
+        padding-top: 4rem;
+    }
+
     .mobile-menu-btn {
         display: flex;
     }
@@ -1696,16 +1708,21 @@ ul {
         box-shadow: 0 4px 12px rgba(232, 101, 58, 0.3);
     }
 
-    /* Show arrow toggle on mobile — it closes the sidebar (JS handles the behavior) */
+    /* Arrow toggle sits inside the sidebar top-right as a close button */
     .sidebar-toggle {
         display: flex;
-        top: 1.5rem;
-        right: -18px;
-        /* Arrow points right (→) to indicate closing direction */
-        transform: rotate(180deg);
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+        left: auto;      /* override desktop left:-15px positioning */
+        width: 34px;
+        height: 34px;
+        background: var(--bg-page);
+        border-radius: 50%;
+        transform: rotate(180deg); /* point → right = close */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* Keep it pointing right even when sidebar is "collapsed" state isn't used on mobile */
     .sidebar.active .sidebar-toggle {
         transform: rotate(180deg);
     }
