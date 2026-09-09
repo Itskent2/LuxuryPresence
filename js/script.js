@@ -42,11 +42,17 @@ if (sidebarClose && sidebar) {
 overlay.addEventListener('click', closeSidebar);
 
 
-// Sidebar Collapse Toggle
+// Sidebar Collapse Toggle / Mobile Close
 const sidebarToggleBtn = document.querySelector('.sidebar-toggle');
 if (sidebarToggleBtn && sidebar) {
     sidebarToggleBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
+        if (window.innerWidth <= 992) {
+            // On mobile: arrow button closes the sidebar
+            closeSidebar();
+        } else {
+            // On desktop: arrow button collapses/expands the sidebar
+            sidebar.classList.toggle('collapsed');
+        }
     });
 }
 

@@ -1628,15 +1628,9 @@ ul {
         left: 0;
     }
 
+    /* Hide the × close button — arrow handles closing on mobile */
     .sidebar-close {
-        display: block;
-        align-self: flex-end;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        cursor: pointer;
-        margin-bottom: 1rem;
-        color: var(--text-main);
+        display: none;
     }
 
     .mobile-menu-btn {
@@ -1702,9 +1696,18 @@ ul {
         box-shadow: 0 4px 12px rgba(232, 101, 58, 0.3);
     }
 
-    /* Hide desktop collapse toggle on mobile — it doesn't apply */
+    /* Show arrow toggle on mobile — it closes the sidebar (JS handles the behavior) */
     .sidebar-toggle {
-        display: none;
+        display: flex;
+        top: 1.5rem;
+        right: -18px;
+        /* Arrow points right (→) to indicate closing direction */
+        transform: rotate(180deg);
+    }
+
+    /* Keep it pointing right even when sidebar is "collapsed" state isn't used on mobile */
+    .sidebar.active .sidebar-toggle {
+        transform: rotate(180deg);
     }
 }
 
