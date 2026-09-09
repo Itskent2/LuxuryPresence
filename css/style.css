@@ -1627,7 +1627,106 @@ body.sidebar-open .mobile-menu-btn {
     }
 }
 
-@media (max-width: 992px) {
+/* ========================================
+   Tablet & iPad Layout (768px – 1024px)
+   Sidebar EXISTS persistently on tablet/iPad
+   ======================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .dashboard-wrapper {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 1rem;
+        height: calc(100vh - 2rem);
+        width: 220px;
+        min-width: 220px;
+        padding: 2rem 1.1rem;
+        margin: 1rem 0 1rem 0.8rem;
+        display: flex;
+        left: auto;
+        z-index: 200;
+        box-shadow: var(--shadow-blue);
+        border-radius: var(--radius-lg);
+    }
+
+    .sidebar.collapsed {
+        width: 80px;
+        min-width: 80px;
+        padding: 2rem 0.6rem;
+    }
+
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    .sidebar-overlay {
+        display: none !important;
+    }
+
+    .main-content {
+        padding: 1.5rem 1.5rem 2rem;
+        max-width: 100%;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-wide,
+    .card-tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .main-header {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .areas-strip {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .strip-label {
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.6rem;
+    }
+
+    .strip-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .strip-item {
+        background: var(--bg-page);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 0.6rem 0.5rem;
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 600;
+        justify-content: center;
+        white-space: normal;
+        line-height: 1.2;
+    }
+}
+
+/* ========================================
+   Mobile Phones (< 768px)
+   Off-canvas drawer with burger menu
+   ======================================== */
+@media (max-width: 767px) {
     .dashboard-wrapper {
         flex-direction: column;
     }
@@ -1645,6 +1744,7 @@ body.sidebar-open .mobile-menu-btn {
         margin: 0;
         border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
         overflow-y: auto;
+        padding-top: 4rem;
     }
 
     .sidebar.active {
@@ -1656,17 +1756,12 @@ body.sidebar-open .mobile-menu-btn {
         display: none;
     }
 
-    /* Add top padding so nav items clear the arrow button */
-    .sidebar {
-        padding-top: 4rem;
-    }
-
     .mobile-menu-btn {
         display: flex;
     }
 
     .main-content {
-        padding: 5rem 2rem 2rem;
+        padding: 5rem 1.25rem 2rem;
         max-width: 100%;
     }
 
@@ -1765,7 +1860,7 @@ body.sidebar-open .mobile-menu-btn {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .bento-grid {
         grid-template-columns: 1fr;
     }

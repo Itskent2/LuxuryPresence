@@ -48,11 +48,11 @@ overlay.addEventListener('click', closeSidebar);
 const sidebarToggleBtn = document.querySelector('.sidebar-toggle');
 if (sidebarToggleBtn && sidebar) {
     sidebarToggleBtn.addEventListener('click', () => {
-        if (window.innerWidth <= 992 || sidebar.classList.contains('active')) {
-            // On mobile: arrow button closes the sidebar
+        if (window.innerWidth <= 767 || sidebar.classList.contains('active')) {
+            // On mobile: arrow button closes the sidebar drawer
             closeSidebar();
         } else {
-            // On desktop: arrow button collapses/expands the sidebar
+            // On tablet and desktop: arrow button collapses/expands the sidebar
             sidebar.classList.toggle('collapsed');
         }
     });
@@ -65,9 +65,13 @@ const navLinks = document.querySelectorAll('.sidebar-nav a');
 const sectionIds = ['home', 'about', 'projects', 'gallery', 'services', 'contact'];
 
 function setActiveNav(targetId) {
+    let activeHref = targetId;
+    if (targetId === 'gallery') activeHref = 'projects';
+    if (targetId === 'services') activeHref = 'contact';
+
     navLinks.forEach(link => {
         const href = link.getAttribute('href').replace('#', '');
-        link.parentElement.classList.toggle('active', href === targetId);
+        link.parentElement.classList.toggle('active', href === activeHref);
     });
 }
 
@@ -75,12 +79,12 @@ function setActiveNav(targetId) {
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         const rawHref = link.getAttribute('href');
-        if (rawHref === 'javascript:void(0)') {
+        if (!rawHref || rawHref === 'javascript:void(0)') {
             e.preventDefault();
             return;
         }
 
-        if (window.innerWidth <= 992) {
+        if (window.innerWidth <= 767) {
             closeSidebar();
         }
         const targetId = rawHref.replace('#', '');
