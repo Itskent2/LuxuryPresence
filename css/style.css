@@ -1641,14 +1641,14 @@ body.sidebar-open .mobile-menu-btn {
         flex-direction: row;
     }
 
-    /* On tablet/iPad: sidebar is the collapsed icon strip by default */
+    /* Tablet/iPad: default is expanded (when .collapsed is removed) */
     .sidebar {
         position: sticky;
         top: 1rem;
         height: calc(100vh - 2rem);
-        width: 80px;
-        min-width: 80px;
-        padding: 2rem 0.6rem;
+        width: 220px;
+        min-width: 220px;
+        padding: 2rem 1.1rem;
         margin: 1rem 0 1rem 0.8rem;
         display: flex;
         left: auto;
@@ -1658,49 +1658,45 @@ body.sidebar-open .mobile-menu-btn {
         transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
     }
 
-    .sidebar .nav-text,
-    .sidebar .footer-text {
+    .sidebar .sidebar-nav a {
+        padding: 1rem 1.2rem;
+        justify-content: flex-start;
+    }
+
+    .sidebar .nav-icon {
+        margin-right: 1rem;
+    }
+
+    .sidebar .sidebar-toggle {
+        transform: none;
+        /* Arrow points < to collapse */
+    }
+
+    /* On tablet/iPad: when .collapsed (default state), shows icon strip */
+    .sidebar.collapsed {
+        width: 80px;
+        min-width: 80px;
+        padding: 2rem 0.6rem;
+    }
+
+    .sidebar.collapsed .nav-text,
+    .sidebar.collapsed .footer-text {
         opacity: 0;
         visibility: hidden;
     }
 
-    .sidebar .sidebar-nav a {
+    .sidebar.collapsed .sidebar-nav a {
         padding: 1rem 0;
         justify-content: center;
     }
 
-    .sidebar .nav-icon {
+    .sidebar.collapsed .nav-icon {
         margin-right: 0;
     }
 
-    .sidebar .sidebar-toggle {
-        transform: rotate(180deg); /* Arrow points > to expand */
-    }
-
-    /* When expanded on tablet/iPad */
-    .sidebar.expanded {
-        width: 220px;
-        min-width: 220px;
-        padding: 2rem 1.1rem;
-    }
-
-    .sidebar.expanded .nav-text,
-    .sidebar.expanded .footer-text {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .sidebar.expanded .sidebar-nav a {
-        padding: 1rem 1.5rem;
-        justify-content: flex-start;
-    }
-
-    .sidebar.expanded .nav-icon {
-        margin-right: 1rem;
-    }
-
-    .sidebar.expanded .sidebar-toggle {
-        transform: none; /* Arrow points < to collapse */
+    .sidebar.collapsed .sidebar-toggle {
+        transform: rotate(180deg);
+        /* Arrow points > to expand */
     }
 
     .mobile-menu-btn {
@@ -1832,17 +1828,39 @@ body.sidebar-open .mobile-menu-btn {
     .main-content {
         padding: 5rem 1.25rem 2rem;
         max-width: 100%;
+        overflow-x: hidden;
     }
 
     .site-footer {
         margin-bottom: -2rem;
-        margin-left: -2rem;
-        margin-right: -2rem;
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
     }
 
     .main-header {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
         gap: 1.5rem;
+    }
+
+    .header-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header-logo-img {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .header-action {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .areas-strip {
@@ -2064,6 +2082,12 @@ body.sidebar-open .mobile-menu-btn {
 @media (max-width: 480px) {
     .main-content {
         padding: 4.5rem 0.8rem 1rem;
+    }
+
+    .site-footer {
+        margin-left: -0.8rem;
+        margin-right: -0.8rem;
+        margin-bottom: -1rem;
     }
 
     .main-header {

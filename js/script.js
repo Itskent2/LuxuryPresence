@@ -58,11 +58,8 @@ if (sidebarToggleBtn && sidebar) {
         if (window.innerWidth <= 767 || sidebar.classList.contains('active')) {
             // On mobile: arrow button closes the sidebar drawer
             closeSidebar();
-        } else if (window.innerWidth <= 1024) {
-            // On tablet/iPad: toggle expanded mode
-            sidebar.classList.toggle('expanded');
         } else {
-            // On desktop: arrow button collapses/expands the sidebar
+            // On tablet/iPad and desktop: arrow button expands/collapses the sidebar
             sidebar.classList.toggle('collapsed');
         }
     });
