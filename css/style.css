@@ -413,6 +413,17 @@ ul {
     padding: 2.5rem 1rem;
 }
 
+.sidebar.collapsed .sidebar-nav a {
+    padding: 1rem 0;
+    justify-content: center;
+}
+
+.sidebar.collapsed .nav-icon {
+    margin-right: 0;
+}
+
+
+
 .sidebar-toggle {
     position: absolute;
     top: 3.5rem;
@@ -1633,10 +1644,10 @@ body.sidebar-open .mobile-menu-btn {
 }
 
 /* ========================================
-   Tablet & iPad Layout (768px – 1024px)
+   Tablet & iPad Layout (768px – 1200px)
    Sidebar shows as the icon strip (no burger menu)
    ======================================== */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1200px) {
     .dashboard-wrapper {
         flex-direction: row;
     }

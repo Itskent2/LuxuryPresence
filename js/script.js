@@ -65,6 +65,7 @@ if (sidebarToggleBtn && sidebar) {
     });
 }
 
+
 // ── Sidebar Nav: Active State & Navigation ──
 const navLinks = document.querySelectorAll('.sidebar-nav a');
 
