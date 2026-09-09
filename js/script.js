@@ -58,61 +58,39 @@ if (sidebarToggleBtn && sidebar) {
     });
 }
 
-// ── Sidebar Nav: Active State via Scroll + Click ──
+// ── Sidebar Nav: Active State & Navigation ──
 const navLinks = document.querySelectorAll('.sidebar-nav a');
 
-// Map each nav href to a section ID
-const sectionIds = ['home', 'about', 'projects', 'gallery', 'services', 'contact'];
-
-function setActiveNav(targetId) {
-    let activeHref = targetId;
-    if (targetId === 'gallery') activeHref = 'projects';
-    if (targetId === 'services') activeHref = 'contact';
-
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href').replace('#', '');
-        link.parentElement.classList.toggle('active', href === activeHref);
-    });
-}
-
-// Click: set immediately
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         const rawHref = link.getAttribute('href');
-        if (!rawHref || rawHref === 'javascript:void(0)') {
-            e.preventDefault();
-            return;
-        }
 
+        // On mobile phone, close drawer when tapping any item
         if (window.innerWidth <= 767) {
             closeSidebar();
         }
-        const targetId = rawHref.replace('#', '');
-        setActiveNav(targetId);
-    });
-});
 
-// Scroll: watch sections with IntersectionObserver
-const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -60% 0px',
-    threshold: 0
-};
+        // Set active styling on clicked item, remove from others
+        navLinks.forEach(l => l.parentElement.classList.remove('active'));
+        link.parentElement.classList.add('active');
 
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            setActiveNav(entry.target.id);
+        // Only HOME is functional; prevent navigation/scrolling for other items
+        if (!rawHref || rawHref === 'javascript:void(0)' || rawHref !== '#home') {
+            e.preventDefault();
+            return;
         }
     });
-}, observerOptions);
-
-sectionIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) sectionObserver.observe(el);
 });
 
-// (Removed redundant mobile sidebar close logic, now handled above)
+// Highlight HOME when at the top of the page
+window.addEventListener('scroll', () => {
+    if (window.scrollY < 120) {
+        navLinks.forEach(link => {
+            const isHome = link.getAttribute('href') === '#home';
+            link.parentElement.classList.toggle('active', isHome);
+        });
+    }
+}, { passive: true });
 
 // Theme Toggle — persistent via localStorage
 const themeToggle = document.querySelector('.theme-toggle');
